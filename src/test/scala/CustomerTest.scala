@@ -21,7 +21,7 @@ class CustomerTest extends FunSuite {
     result += "Ammount owed is " + String.valueOf(totalAmount) + "\n"
     result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points"
 
-    customer.addRental(new Rental(new Movie("Rush", Movie.REGULAR), 1))
+    customer.addRental(new Rental(new Movie("Rush", new RegularPrice), 1))
     println(customer.statement())
     println(result)
     assert(customer.statement() == result)
@@ -40,7 +40,7 @@ class CustomerTest extends FunSuite {
     result += "Ammount owed is " + String.valueOf(totalAmount) + "\n"
     result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points"
 
-    customer.addRental(new Rental(new Movie(movieTitle, Movie.NEW_RELEASE), 3))
+    customer.addRental(new Rental(new Movie(movieTitle, new NewReleasePrice), 3))
     println(customer.statement())
     println(result)
     assert(customer.statement() == result)
