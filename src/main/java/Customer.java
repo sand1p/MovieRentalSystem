@@ -26,7 +26,7 @@ public class Customer {
             //determine amounts for each line
             Rental each = (Rental) rentals.nextElement();
             // show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each._movie.getCharge(each.getDaysRented())) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
         }
 
         //Add footer lines
@@ -40,7 +40,7 @@ public class Customer {
         Enumeration rentals = _rentals.elements();
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-            result += each._movie.getCharge(each.getDaysRented());
+            result += each.getCharge();
         }
         return result;
     }
@@ -50,7 +50,7 @@ public class Customer {
         Enumeration rentals = _rentals.elements();
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-            result += each._movie.getFrequentRenterPoints(each.getDaysRented());
+            result += each.getFrequentRenterPoints();
         }
         return result;
     }
@@ -62,7 +62,7 @@ public class Customer {
             Rental each = (Rental) rentals.nextElement();
             //show figures for each rental
             result += each.getMovie().getTitle() + ": " +
-                    String.valueOf(each._movie.getCharge(each.getDaysRented())) + "<BR>\n";
+                    String.valueOf(each.getCharge()) + "<BR>\n";
         }
         //add Footer lines
         result += "<P> You owe <EM>" + String.valueOf(getTotalCharge()) + "</EM><P>\n";

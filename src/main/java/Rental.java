@@ -16,4 +16,14 @@ public class Rental {
         return _daysRented;
     }
 
+    public int getFrequentRenterPoints() {
+        //add Bonus for a two day new release rental
+        return _movie.getFrequentRenterPoints(_daysRented);
+    }
+
+    public double getCharge() {
+        //determine amounts for each line
+        return _movie.getCharge(_daysRented);
+    }
+
 }
