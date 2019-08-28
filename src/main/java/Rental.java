@@ -34,12 +34,19 @@ public class Rental {
 
             case Movie.NEW_RELEASE:
                 result += 1.5;
-                System.out.println("This Ammount add 1.5: "+result);
+                System.out.println("This Ammount add 1.5: " + result);
                 result += getDaysRented() * 3;
-                System.out.println("This Ammount 3*3 = 9 + 1.5: "+result);
+                System.out.println("This Ammount 3*3 = 9 + 1.5: " + result);
                 break;
         }
-        System.out.println("This Ammount: "+result);
+        System.out.println("This Ammount: " + result);
         return result;
+    }
+
+    public int getFrequentRenterPoints() {
+        //add Bonus for a two day new release rental
+        if ((getMovie().getPriceCode() == Movie.NEW_RELEASE)
+                && getDaysRented() > 2) return 2;
+        else return 1;
     }
 }
