@@ -16,7 +16,7 @@ public class Rental {
         return _daysRented;
     }
 
-    public double amountFor() {
+    public double getCharge() {
         //determine amounts for each line
         double thisAmount = 0;
         switch (getMovie().getPriceCode()) {
